@@ -2,6 +2,16 @@
 
 
 			== Javascript Test====
+
+document.addEventListener('click', e => {
+   if (e.target.closest('.swatch')) {
+      const $swatch = e.target.closest('.swatch')
+      document.querySelector(`.product-form .swatch[data-value="${$swatch.dataset.value}"]`).click()
+
+      $swatch.closest('.swatches .swatch').classList.remove('selected')
+      $swatch.classList.add('selected')
+   }
+})
  
 2. In pass-by value in JavaScript, a copy of the original variable is created, so any changes made to the copied variable do
  not affect the original variable. In pass-by reference in JavaScript, we pass the reference of the actual parameter. No copy
