@@ -3,6 +3,39 @@
 
 			== Javascript Test====
  
- 1.
+2. In pass-by value in JavaScript, a copy of the original variable is created, so any changes made to the copied variable do
+ not affect the original variable. In pass-by reference in JavaScript, we pass the reference of the actual parameter. No copy
+ is created in the memory. If function arguments are passed by reference, the changes of variables that you pass into the 
+ function will be reflected outside the function.
+ 
+ a pass by value of a primitive example:
+ 
+ function square_root(x) {
+    x = x * x;
+    return x;
+}
+
+let y = 5;
+let result = square_root(y);
+
+console.log(result); // 25 
+console.log(y); // 5 -- no change
+
+==========================
+
+	a pass by value of a reference example:
+
+let person = {
+  name: 'Alex',
+  age: 38,
+};
+
+function decreaseAge(obj) {
+  obj.age -= 1;
+}
+
+decreaseAge(person);
+
+console.log(person);
  
  
